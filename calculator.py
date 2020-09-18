@@ -10,4 +10,4 @@ class Calculator:
 
     @staticmethod
     def mul(multiplicand, multiplier):
-        return 30
+        return multiplicand * multiplier

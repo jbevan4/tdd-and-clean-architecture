@@ -26,3 +26,4 @@ def test_can_subtract_two_numbers():
 def test_can_multiple_two_numbers():
     calculator = Calculator()
     assert calculator.mul(10, 3) == 30
+    assert calculator.mul(10, 4) == 40
