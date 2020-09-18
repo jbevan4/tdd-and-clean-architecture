@@ -32,3 +32,8 @@ def test_can_multiply_two_numbers():
 def test_can_multiply_three_numbers():
     calculator = Calculator()
     assert calculator.mul(10, 3, 10) == 300
+
+
+def test_can_multiply_many_numbers():
+    calculator = Calculator()
+    assert calculator.mul(*range(1, 11)) == 3628800
