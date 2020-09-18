@@ -1,3 +1,7 @@
+from functools import reduce
+from math import prod
+
+
 class Calculator:
 
     @staticmethod
@@ -9,5 +13,5 @@ class Calculator:
         return minuend - subtrahend
 
     @staticmethod
-    def mul(multiplicand, multiplier):
-        return multiplicand * multiplier
+    def mul(*args):
+        return prod(args)

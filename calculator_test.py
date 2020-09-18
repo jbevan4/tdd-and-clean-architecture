@@ -23,7 +23,12 @@ def test_can_subtract_two_numbers():
     assert calculator.sub(19, 9) == 10
 
 
-def test_can_multiple_two_numbers():
+def test_can_multiply_two_numbers():
     calculator = Calculator()
     assert calculator.mul(10, 3) == 30
     assert calculator.mul(10, 4) == 40
+
+
+def test_can_multiply_three_numbers():
+    calculator = Calculator()
+    assert calculator.mul(10, 3, 10) == 300
