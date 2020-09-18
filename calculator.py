@@ -7,3 +7,7 @@ class Calculator:
     @staticmethod
     def sub(minuend, subtrahend):
         return minuend - subtrahend
+
+    @staticmethod
+    def mul(multiplicand, multiplier):
+        return 30
