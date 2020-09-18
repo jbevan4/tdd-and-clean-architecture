@@ -15,3 +15,7 @@ class Calculator:
     @staticmethod
     def mul(*args):
         return prod(args)
+
+    @staticmethod
+    def div(numerator, denominator):
+        return numerator / denominator
