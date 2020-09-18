@@ -1,5 +1,6 @@
 from functools import reduce
 from math import prod
+from statistics import mean
 
 
 class Calculator:
@@ -27,4 +28,4 @@ class Calculator:
 
     @staticmethod
     def avg(iterable):
-        return 2
+        return mean(iterable)

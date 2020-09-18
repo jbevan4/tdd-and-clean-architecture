@@ -1,5 +1,5 @@
 from calculator import Calculator
-from pytest import raises, fixture
+from pytest import approx, raises, fixture, mark
 
 
 @fixture
@@ -56,5 +56,6 @@ def test_raises_an_exception_when_multiplying_with_a_falsy_value(calculator):
         calculator.mul(10, None)
 
 
-def test_returns_the_average_of_three_numbers(calculator):
-    assert calculator.avg([1, 2, 3]) == 2
+@mark.parametrize("test_input, expected", [([1, 2, 3], 2), ([4, 5, 6], 5), ([4, 5, 5], 4.67)])
+def test_returns_the_average_of_three_numbers(test_input, expected, calculator):
+    assert calculator.avg(test_input) == approx(expected, 0.1)
