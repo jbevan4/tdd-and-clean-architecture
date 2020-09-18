@@ -1,4 +1,5 @@
 from calculator import Calculator
+from pytest import raises
 
 
 def test_can_add_two_numbers():
@@ -47,3 +48,15 @@ def test_can_divide_two_numbers():
 def test_dividing_by_zero_returns_inf():
     calculator = Calculator()
     assert calculator.div(10, 0) == "inf"
+
+
+def test_raises_an_exception_when_multiply_by_zero():
+    calculator = Calculator()
+    with raises(ValueError):
+        calculator.mul(10, 0)
+
+
+def test_raises_an_exception_when_multiplying_with_a_falsy_value():
+    calculator = Calculator()
+    with raises(ValueError):
+        calculator.mul(10, None)

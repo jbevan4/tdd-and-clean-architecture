@@ -14,6 +14,8 @@ class Calculator:
 
     @staticmethod
     def mul(*args):
+        if not all(args):
+            raise ValueError
         return prod(args)
 
     @staticmethod
