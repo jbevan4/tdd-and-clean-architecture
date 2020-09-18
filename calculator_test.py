@@ -15,3 +15,8 @@ def test_can_add_three_numbers():
 def test_can_add_many_numbers():
     calculator = Calculator()
     assert calculator.add(*range(100)) == 4950
+
+
+def test_can_subtract_two_numbers():
+    calculator = Calculator()
+    assert calculator.sub(10, 3) == 7
