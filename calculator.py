@@ -6,4 +6,4 @@ class Calculator:
 
     @staticmethod
     def sub(minuend, subtrahend):
-        return 7
+        return minuend - subtrahend
