@@ -42,3 +42,8 @@ def test_can_multiply_many_numbers():
 def test_can_divide_two_numbers():
     calculator = Calculator()
     assert calculator.div(10, 2) == 5.0
+
+
+def test_dividing_by_zero_returns_inf():
+    calculator = Calculator()
+    assert calculator.div(10, 0) == "inf"

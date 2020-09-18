@@ -18,4 +18,7 @@ class Calculator:
 
     @staticmethod
     def div(numerator, denominator):
-        return numerator / denominator
+        try:
+            return numerator / denominator
+        except ZeroDivisionError:
+            return "inf"
