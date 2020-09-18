@@ -54,3 +54,7 @@ def test_raises_an_exception_when_multiply_by_zero(calculator):
 def test_raises_an_exception_when_multiplying_with_a_falsy_value(calculator):
     with raises(ValueError):
         calculator.mul(10, None)
+
+
+def test_returns_the_average_of_three_numbers(calculator):
+    assert calculator.avg([1, 2, 3]) == 2
