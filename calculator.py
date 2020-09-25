@@ -27,7 +27,9 @@ class Calculator:
             return "inf"
 
     @staticmethod
-    def avg(iterable, ut=None):
+    def avg(iterable, ut=None, lt=None):
         if ut:
             iterable = filter(lambda x: x < ut, iterable)
+        if lt:
+            iterable = filter(lambda x: x >= lt, iterable)
         return mean(iterable)
