@@ -84,3 +84,9 @@ def test_returns_the_average_of_a_list_with_the_lower_limit_removed(iterable_of_
 
 def test_returns_zero_if_the_iterable_is_empty(calculator):
     assert calculator.avg([]) == 0
+
+
+@mark.parametrize("iterable_of_numbers, lt, ut, expected", [([4, 5, 6], 2, 3, 0),
+                                                            ([99, 108, 42], 0, 10, 0)])
+def test_returns_zero_if_the_lower_threshold_and_upper_thresholds_make_the_iterator_empty(iterable_of_numbers, lt, ut, expected, calculator):
+    assert calculator.avg(iterable_of_numbers, lt=lt, ut=ut) == 0
