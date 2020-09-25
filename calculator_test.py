@@ -94,3 +94,7 @@ def test_returns_zero_if_the_lower_threshold_and_upper_thresholds_make_the_itera
 
 def test_returns_zero_if_lower_and_upper_thresholds_exist_but_empty_list(calculator):
     assert calculator.avg([], ut=25, lt=10) == 0
+
+
+def test_can_deal_with_zero_as_lower_threshold_bound(calculator):
+    assert calculator.avg([-1, 0, 1], lt=0) == 0.5

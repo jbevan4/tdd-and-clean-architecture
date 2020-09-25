@@ -28,9 +28,9 @@ class Calculator:
 
     @staticmethod
     def avg(iterable, ut=None, lt=None):
-        if ut:
+        if ut is not None:
             iterable = filter(lambda x: x <= ut, iterable)
-        if lt:
+        if lt is not None:
             iterable = filter(lambda x: x >= lt, iterable)
         try:
             return mean(iterable)
