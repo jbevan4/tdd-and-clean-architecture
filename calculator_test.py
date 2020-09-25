@@ -69,7 +69,7 @@ def test_returns_the_average_of_one_number(calculator):
 @mark.parametrize("iterable_of_numbers, ut, expected", [([1, 2, 3, 51], 50, 2),
                                                         ([4, 5, 6], 49, 5),
                                                         ([4, 5, 5], 12, 4.67),
-                                                        ([51, 1, 2, 3], 51, 2)])
+                                                        ([51, 1, 2, 4], 51, 14)])
 def test_returns_the_average_of_a_list_with_the_upper_limit_removed(iterable_of_numbers, ut, expected, calculator):
     assert calculator.avg(iterable_of_numbers, ut=ut) == approx(expected, 0.1)
 
