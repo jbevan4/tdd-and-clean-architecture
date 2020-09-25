@@ -80,3 +80,7 @@ def test_returns_the_average_of_a_list_with_the_upper_limit_removed(iterable_of_
                                                         ([51, 1, 2, 7], 2, 20)])
 def test_returns_the_average_of_a_list_with_the_lower_limit_removed(iterable_of_numbers, lt, expected, calculator):
     assert calculator.avg(iterable_of_numbers, lt=lt) == approx(expected, 0.1)
+
+
+def test_returns_zero_if_the_iterable_is_empty(calculator):
+    assert calculator.avg([]) == 0

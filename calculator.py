@@ -1,6 +1,6 @@
 from functools import reduce
 from math import prod
-from statistics import mean
+from statistics import mean, StatisticsError
 
 
 class Calculator:
@@ -32,4 +32,7 @@ class Calculator:
             iterable = filter(lambda x: x <= ut, iterable)
         if lt:
             iterable = filter(lambda x: x >= lt, iterable)
-        return mean(iterable)
+        try:
+            return mean(iterable)
+        except StatisticsError:
+            return 0
