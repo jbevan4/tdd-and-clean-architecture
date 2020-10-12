@@ -10,6 +10,6 @@ class FileInfo:
         return (
             self.file_name,
             self.original_path,
-            os.path.abspath(self.original_path),
+            os.path.abspath(self.file_name),
             os.path.getsize(self.file_name)
         )

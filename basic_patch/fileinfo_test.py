@@ -29,4 +29,8 @@ def test_get_info(mock_path, mock_size):
     mock_size.return_value = test_size
 
     fi = FileInfo(original_path)
-    assert fi.get_info() == (file_name, original_path, test_path, test_size)
+    info = fi.get_info()
+
+    mock_path.assert_called_with(file_name)
+    mock_size.assert_called_with(file_name)
+    assert info == (file_name, original_path, test_path, test_size)
