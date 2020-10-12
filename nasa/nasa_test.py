@@ -1,9 +1,17 @@
-from unittest.mock import Mock
-from json import load
+from unittest.mock import Mock, patch
+from json import load, dumps
 
-import requests_mock
+from requests import Response
 
 from .nasa import NasaHandler
+
+
+class FakeResponse:
+    def __init__(self, data):
+        self.data = data
+
+    def json(self):
+        return self.data
 
 
 def test_can_sum_mass_of_planets():
@@ -43,14 +51,11 @@ def test_can_sum_mass_of_planets():
     assert nh.calculate_planet_mass(nh.get_data()) == 370.5
 
 
-def test_can_make_an_external_request():
-    with open("response.json") as response_json:
-        mock_response = load(response_json)
-
+@patch('nasa.nasa.get')
+def test_can_workout_planets_average_mass(request_mock):
+    test_mock = FakeResponse([{"id": 1, "mass": 20}, {"id": 2, "mass": 80}])
+    request_mock.return_value = test_mock
     nh = NasaHandler()
-
-    with requests_mock.Mocker() as mock:
-        mock.get("https://data.nasa.gov/resource/y77d-th95.json",
-                 json=mock_response)
-        response = nh.get_data()
-        assert response == mock_response
+    result = nh.get_data()
+    request_mock.assert_called_once()
+    assert nh.calculate_planet_mass(result) == 50

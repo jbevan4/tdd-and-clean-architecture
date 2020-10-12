@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from connection import ConnectionHandler
+from .connection import ConnectionHandler
 
 
 def test_connect():

@@ -12,7 +12,6 @@ pycodestyle==2.6.0
 pyparsing==2.4.7
 pytest==6.0.2
 requests==2.24.0
-requests-mock==1.8.0
 six==1.15.0
 toml==0.10.1
 urllib3==1.25.10
