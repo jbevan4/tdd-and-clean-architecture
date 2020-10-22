@@ -1,6 +1,6 @@
 from requests import get
 
-from calculator.calculator import Calculator
+from calculator.calculator import avg
 
 
 class NasaHandler():
@@ -13,4 +13,4 @@ class NasaHandler():
         return response.json()
 
     def calculate_planet_mass(self, data):
-        return Calculator.avg(float(planet.get("mass", 0)) for planet in data)
+        return avg(float(planet.get("mass", 0)) for planet in data)
