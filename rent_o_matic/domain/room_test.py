@@ -1,6 +1,6 @@
 import uuid
 
-from .room import Room
+from domain.room import Room
 
 
 def test_room_model_init():
